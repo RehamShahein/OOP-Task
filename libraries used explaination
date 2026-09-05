@@ -1,0 +1,10 @@
+In task1:
+
+1. Keyboard library to be able to read the arrows keys in the keyboard if they are getting pushed
+2. time library to be able to pause the code and consider time wheneverneeded in the code like in cooling down
+
+In Task2:
+
+1. random library to generete random values
+2. math library to be able to do the conversion from the polar coordinates to cartesian coordinates
+3. matplotlib library used to show visualization of the cartesian coordiates for a point
