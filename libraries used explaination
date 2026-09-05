@@ -2,6 +2,7 @@ In task1:
 
 1. Keyboard library to be able to read the arrows keys in the keyboard if they are getting pushed
 2. time library to be able to pause the code and consider time wheneverneeded in the code like in cooling down
+3. Random library to generete random values for te sensors to mock them.
 
 In Task2:
 
