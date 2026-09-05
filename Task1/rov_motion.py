@@ -70,30 +70,32 @@ class rov_motion:
         print("Press the left arrow to move the ROV left")
         print("Press the right arrow to move the ROV right")
 
-        while True:
+        time.sleep(1)
 
-            if keyboard.is_pressed("up"):
-                self.rov_move_up(50)
-                print("Moving up")
-                time.sleep(0.2)
-            elif keyboard.is_pressed("down"):
-                self.rov_move_down(50)
-                print("Moving down")
-                time.sleep(0.2)
-            elif keyboard.is_pressed("left"):
-                self.rov_move_left(50)
-                print("Moving left")
-                time.sleep(0.2)
-            elif keyboard.is_pressed("right"):
-                self.rov_move_right(50)
-                print("Moving right")
-                time.sleep(0.2)
-            else:
-                self.thruster1.thrust_speed(1, 0)
-                self.thruster2.thrust_speed(2, 0)
-                self.thruster3.thrust_speed(3, 0)
-                self.thruster4.thrust_speed(4, 0)
-                self.thruster5.thrust_speed(5, 0)
-                self.thruster6.thrust_speed(6, 0)
-                self.thruster7.thrust_speed(7, 0)
-                self.thruster8.thrust_speed(8, 0)
+        if keyboard.is_pressed("up"):
+            self.rov_move_up(50)
+            print("Moving up")
+            time.sleep(0.2)
+        elif keyboard.is_pressed("down"):
+            self.rov_move_down(50)
+            print("Moving down")
+            time.sleep(0.2)
+        elif keyboard.is_pressed("left"):
+            self.rov_move_left(50)
+            print("Moving left")
+            time.sleep(0.2)
+        elif keyboard.is_pressed("right"):
+            self.rov_move_right(50)
+            print("Moving right")
+            time.sleep(0.2)
+        else:
+            self.thruster1.thrust_speed(1, 0)
+            self.thruster2.thrust_speed(2, 0)
+            self.thruster3.thrust_speed(3, 0)
+            self.thruster4.thrust_speed(4, 0)
+            self.thruster5.thrust_speed(5, 0)
+            self.thruster6.thrust_speed(6, 0)
+            self.thruster7.thrust_speed(7, 0)
+            self.thruster8.thrust_speed(8, 0)
+            print("No key pressed. ROV is stationary.")
+            time.sleep(0.2)

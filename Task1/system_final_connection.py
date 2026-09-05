@@ -5,18 +5,24 @@ import time
 
 
 class rov_system:
-    def __init__(self, voltage=5.0, temperature=25.0, cpu_usage=0.5):
-        self.monitor = health_monitor(voltage, temperature, cpu_usage)
+    def __init__(self):
+        self.monitor = health_monitor()  # pylint: disable=invalid-name
         self.control = rov_motion()
 
     def start_system(self):
-        if self.monitor.health_check():
-            print("System is healthy. Proceeding with ROV control.")
-            self.control.rov_control_keyboard()
+        while True:
 
-        else:
-            print("System is not healthy. Cooling down for 5 seconds.")
-            time.sleep(5)
+            if self.monitor.health_check():
+                print("System is healthy. Proceeding with ROV control.")
+                time.sleep(2)
+                print("Health check complete. Starting ROV control.")
+                self.control.rov_control_keyboard()
+
+            else:
+                print("System is not healthy. Cooling down for 5 seconds.")
+                time.sleep(5)
+                print("cooling down complete. Rechecking system health.")
+            time.sleep(2)
 
 
 rov_system_instance = rov_system()
