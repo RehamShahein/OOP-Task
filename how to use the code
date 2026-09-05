@@ -1,4 +1,6 @@
 Task1:
-
+In the code of this task because there is no hardware actually connected I used random library to mock the reading of sesnsors, 
+so the onlything the user of this code may do is whenever the system is healthy is to press the arrow keys to move the thrusters 
+and then a messege will appear saying whaich key is pressed. Please note that the library of keyboard must be installed first!!
 
 Task2: download the terminal of matplotlib to be able to see the point on the coordiates and then run the code
