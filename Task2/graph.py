@@ -18,27 +18,25 @@ class values_for_graph:
 
 
 class graph:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, values):
+        self.values = values
 
     def plot(self):
 
-        plt.scatter(self.x, self.y)
-        plt.title(f'Random Points in Cartesian Coordinates')
-        plt.xlabel('X-axis')
-        plt.ylabel('Y-axis')
-        plt.grid()
-        plt.axis('equal')
-        plt.axvline(x=0, color='black', linewidth=0.5)
-        plt.axhline(y=0, color='black', linewidth=0.5)
-        plt.show()
+        while True:
+            x, y = self.values.get_random_cartesian_coordinates()
+            plt.clf()
+            plt.scatter(x, y)
+            plt.title(f'Random Points in Cartesian Coordinates')
+            plt.xlabel('X-axis')
+            plt.ylabel('Y-axis')
+            plt.grid()
+            plt.axis('equal')
+            plt.axvline(x=0, color='black', linewidth=0.5)
+            plt.axhline(y=0, color='black', linewidth=0.5)
+            plt.pause(1)
 
 
-values = values_for_graph(min_angle=0, max_angle=360,
-                          min_distance=0, max_distance=10)
-x, y = values.get_random_cartesian_coordinates()
-
-
-graph_done = graph(x, y)
+values = values_for_graph(0, 180, 0, 10)
+graph_done = graph(values)
 graph_done.plot()
